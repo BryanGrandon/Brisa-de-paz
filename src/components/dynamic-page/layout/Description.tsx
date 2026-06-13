@@ -14,10 +14,16 @@ const Description = ({ description, info }: Props) => {
   return (
     <article className='rounded-lg overflow-hidden border border-black/40 shadow-md shadow-gray-400 max-w-150'>
       <section className='grid grid-cols-2 border-b border-black/40 '>
-        <button className={`p-1 border-r-1 cursor-pointer ${type == 'desc' ? 'bg-primary text-white' : ''}`} onClick={() => setType('desc')}>
-          Description
+        <button
+          className={`p-1 border-r-1 cursor-pointer ${type == 'desc' ? 'bg-primary text-white' : ''}`}
+          onClick={() => setType('desc')}
+        >
+          Descripción
         </button>
-        <button className={`p-1 cursor-pointer ${type == 'info' ? 'bg-primary text-white' : ''}`} onClick={() => setType('info')}>
+        <button
+          className={`p-1 cursor-pointer ${type == 'info' ? 'bg-primary text-white' : ''}`}
+          onClick={() => setType('info')}
+        >
           Información
         </button>
       </section>
@@ -27,10 +33,13 @@ const Description = ({ description, info }: Props) => {
           <p className='prose '>{description}</p>
         </article>
 
-        <article className={`flex flex-col gap-2  ${type == 'info' ? '' : 'hidden'}`}>
+        <article
+          className={`flex flex-col gap-2  ${type == 'info' ? '' : 'hidden'}`}
+        >
           {info.map((el) => (
             <p key={el.name}>
-              <span className='font-semibold'>{el.name}:</span> <span>{el.value}</span>
+              <span className='font-semibold'>{el.name}:</span>{' '}
+              <span>{el.value}</span>
             </p>
           ))}
         </article>
